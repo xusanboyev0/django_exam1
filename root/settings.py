@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
 
+from django.conf.global_settings import DATABASES
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-iaiv-1!tj%06nby4_c-5g!47768m%vz%zy=#b!63_-$m!^i8x6'
@@ -56,17 +58,20 @@ WSGI_APPLICATION = 'root.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        "NAME": "postgres",
-        "USER": "postgres",
-        "PASSWORD": "1",
-        "HOST": "localhost",
-        "PORT": 5432
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         "NAME": "postgres",
+#         "USER": "postgres",
+#         "PASSWORD": "1",
+#         "HOST": "localhost",
+#         "PORT": 5432
+#     }
+# }
 
+DATABASES = {
+    'default': 'django.db.backends.sqlite3',
+}
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
